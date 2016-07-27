@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Based a lot on the discussion here: https://en.wikibooks.org/wiki/Some_Basic_and_Inefficient_Prime_Number_Generating_Algorithms
+
 import sys
 from math import sqrt
 
@@ -22,6 +24,7 @@ def starting_at_value(fake_prime_factors, prime_value):
     while fake_prime_factors[i] != prime_value:
         i += 1
     return fake_prime_factors[i:]
+
 
 def find_primes_up_to(limit):
     found_primes = [2, 3, 5]
@@ -60,10 +63,11 @@ def find_primes_up_to(limit):
 
 def find_biggest_prime_factor_of(n):
     limit = sqrt(n)
-    for i in find_primes_up_to(limit)[::-1]:
-        if n % i == 0:
-            print i
-            break
+    for i in find_primes_up_to(limit): #[::-1]:
+        print i
+        # if n % i == 0:
+        #     print i
+        #     break
 
 
 def main():
